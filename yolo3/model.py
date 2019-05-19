@@ -4,12 +4,21 @@ from functools import wraps
 
 import numpy as np
 import tensorflow as tf
-from keras import backend as K
-from keras.layers import Conv2D, Add, ZeroPadding2D, UpSampling2D, Concatenate, MaxPooling2D
-from keras.layers.advanced_activations import LeakyReLU
-from keras.layers.normalization import BatchNormalization
-from keras.models import Model
-from keras.regularizers import l2
+
+from tensorflow.python.keras import backend as K
+sess = K.get_session()
+
+from tensorflow.python.keras.layers import(Conv2D, Input, ZeroPadding2D, Add, UpSampling2D, MaxPooling2D, Concatenate, LeakyReLU, BatchNormalization)
+from tensorflow.python.keras.regularizers import l2
+from tensorflow.python.keras.models import Model
+from tensorflow.python.keras.utils import plot_model as plot
+
+#from keras import backend as K
+#from keras.layers import Conv2D, Add, ZeroPadding2D, UpSampling2D, Concatenate, MaxPooling2D
+#from keras.layers.advanced_activations import LeakyReLU
+#from keras.layers.normalization import BatchNormalization
+#from keras.models import Model
+#from keras.regularizers import l2
 
 from yolo3.utils import compose
 
